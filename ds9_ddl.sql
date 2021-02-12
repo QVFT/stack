@@ -28,6 +28,9 @@ CREATE TABLE supply_reading
     nutrient_ed FLOAT(2) NOT NULL,
     water_ph FLOAT(2) NOT NULL,
     supply_pressure FLOAT(2) NOT NULL,
+    supply_pump BOOLEAN,
+    supply_3_way BOOLEAN,
+    supply_sprinkler BOOLEAN,
     PRIMARY KEY (supply_id),
     FOREIGN KEY (arduino_id) REFERENCES arduino(arduino_id) ON DELETE cascade,
     FOREIGN KEY (collection_id) REFERENCES collection(collection_id) ON DELETE cascade
@@ -41,6 +44,8 @@ CREATE TABLE return_line
     collection_id int NOT NULL,
     farm_runoff_lvl FLOAT(2) NOT NULL,
     freshwater_lvl FLOAT(2) NOT NULL,
+    return_pump BOOLEAN,
+    return_3_way BOOLEAN,
     PRIMARY KEY (return_id),
     FOREIGN KEY (arduino_id) REFERENCES arduino(arduino_id) ON DELETE cascade,
     FOREIGN KEY (collection_id) REFERENCES collection(collection_id) ON DELETE cascade    
@@ -54,6 +59,7 @@ CREATE TABLE nutrient_zone
     tank_ph_lvl FLOAT(2) NOT NULL,
     tank_A_lvl FLOAT(2) NOT NULL,
     tank_B_lvl FLOAT(2) NOT NULL,
+    nutrient_pump BOOLEAN,
     PRIMARY KEY (nutrient_id),
     FOREIGN KEY (arduino_id) REFERENCES arduino(arduino_id) ON DELETE cascade,
     FOREIGN KEY (collection_id) REFERENCES collection(collection_id) ON DELETE cascade   
@@ -73,6 +79,8 @@ CREATE TABLE growth_zone(
     ambient_temp FLOAT(2) NOT NULL,
     webcam_live BOOLEAN NOT NULL,
     plant_weight FLOAT(2) NOT NULL,
+    light_intensity_1 BOOLEAN,
+    light_intensity_2 BOOLEAN,
     PRIMARY KEY (growwth_id),
     FOREIGN KEY (arduino_id) REFERENCES arduino(arduino_id) ON DELETE cascade,
     FOREIGN KEY (collection_id) REFERENCES collection(collection_id) ON DELETE cascade,
