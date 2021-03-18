@@ -6,4 +6,4 @@ website v2.
 
 # Future Members
 
-* Chris Temp
+* Put your name below!
