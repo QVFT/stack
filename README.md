@@ -7,3 +7,5 @@ website v2.
 # Future Members
 
 * Put your name below!
+
+Grady Palfrey
