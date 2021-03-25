@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-
+    
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='img/logo.png') }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,13 +13,13 @@
     <title>SB Admin 2 - Register</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/sb-admin-2.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -30,7 +31,7 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-5 d-none d-lg-block" style=" background-image: url('https://canadaeast1-mediap.svc.ms/transform/thumbnail?provider=spo&inputFormat=jpg&cs=NWUzY2U2YzAtMmIxZi00Mjg1LThkNGItNzVlZTc4Nzg3MzQ2fFNQTw&docid=https%3A%2F%2Fqueensuca.sharepoint.com%3A443%2Fteams%2FGROUP-QVFT2020212%2F_api%2Fv2.0%2Fdrives%2Fb!48Z7MdLngUSMS5vPrb20Rt_zPaeShi9Hj2w9aD4n77gnCQhoA6JDSKdCqOnlLzH4%2Fitems%2F01JPS7ZNAMV7XPRDZZNBD2HCQMX5LE6VXJ%3Fversion%3DPublished&access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvcXVlZW5zdWNhLnNoYXJlcG9pbnQuY29tQGQ2MWVjYjNiLTM4YjEtNDJkNS04MmM0LWVmYjI4MzhiOTI1YyIsImlzcyI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMCIsIm5iZiI6IjE2MTY1MzMyMDAiLCJleHAiOiIxNjE2NTU0ODAwIiwiZW5kcG9pbnR1cmwiOiJaY1psOFRhZlJrUFVBSkNuU0ZLSXcyVU1sM1dMOTVHRnNZRjl6dDk3REpvPSIsImVuZHBvaW50dXJsTGVuZ3RoIjoiMTQwIiwiaXNsb29wYmFjayI6IlRydWUiLCJ2ZXIiOiJoYXNoZWRwcm9vZnRva2VuIiwic2l0ZWlkIjoiTXpFM1ltTTJaVE10WlRka01pMDBORGd4TFRoak5HSXRPV0pqWm1Ga1ltUmlORFEyIiwiYXBwX2Rpc3BsYXluYW1lIjoiTWljcm9zb2Z0IFRlYW1zIFdlYiBDbGllbnQiLCJnaXZlbl9uYW1lIjoiTWljaGFlbCIsImZhbWlseV9uYW1lIjoiV3JhbmEiLCJzaWduaW5fc3RhdGUiOiJbXCJrbXNpXCJdIiwiYWMiOiJsfG18aCIsImFwcGlkIjoiNWUzY2U2YzAtMmIxZi00Mjg1LThkNGItNzVlZTc4Nzg3MzQ2IiwidGlkIjoiZDYxZWNiM2ItMzhiMS00MmQ1LTgyYzQtZWZiMjgzOGI5MjVjIiwidXBuIjoiMTZtbXdAcXVlZW5zdS5jYSIsInB1aWQiOiIxMDAzN0ZGRTk1OUU3MEU2IiwiY2FjaGVrZXkiOiIwaC5mfG1lbWJlcnNoaXB8MTAwMzdmZmU5NTllNzBlNkBsaXZlLmNvbSIsInNjcCI6Im15ZmlsZXMud3JpdGUgYWxsc2l0ZXMuZnVsbGNvbnRyb2wgYWxsc2l0ZXMubWFuYWdlIGFsbHByb2ZpbGVzLndyaXRlIiwidHQiOiIyIiwidXNlUGVyc2lzdGVudENvb2tpZSI6bnVsbH0.MHVNSGJJQ0lmOXFYa2t6RUUwVGVuUnVHTWovcXdsTEtlN0p5c3cwM0dwWT0&encodeFailures=1&width=1148&height=861');  background-size: cover;"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
@@ -61,23 +62,23 @@
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                <a href="login" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </a>
                                 <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                <a href="/" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google
                                 </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                <a href="/" class="btn btn-facebook btn-user btn-block">
                                     <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
                                 </a>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" href="forgot">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
@@ -88,14 +89,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static',filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="{{ url_for('static',filename='js/sb-admin-2.min.js') }}"></script>
 
 </body>
 

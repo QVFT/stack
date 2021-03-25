@@ -7,11 +7,11 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Direct", "Referral", "Social"],
+    labels: ["Bin 1", "Bin 2", "Bin 3", "Bin 4"],
     datasets: [{
-      data: [55, 30, 15],
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      data: [3.750, 2.750, 2, 1],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#ffa500'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#ff8c00'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },
@@ -26,6 +26,11 @@ var myPieChart = new Chart(ctx, {
       yPadding: 15,
       displayColors: false,
       caretPadding: 10,
+      callbacks: {
+        label: function(tooltipItem, chart) {
+          return chart.labels[tooltipItem.index] + ": " + chart.datasets[0].data[tooltipItem.index] +  " lbs";
+        }
+      }
     },
     legend: {
       display: false

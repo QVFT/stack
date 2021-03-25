@@ -7,13 +7,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Freshwater", "Runoff", "Main Mix"],
+    labels: ["Bin 1", "Bin 2", "Bin 3", "Bin 4"],
     datasets: [{
       label: "Tank",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [34, 22, 42],
+      data: [3.75, 2.75, 2, 1],
     }],
   },
   options: {
@@ -43,7 +43,7 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 60,
+          max: 8,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks
@@ -79,7 +79,7 @@ var myBarChart = new Chart(ctx, {
         label: function(tooltipItem, chart) {
           console.log(tooltipItem)
           var datasetLabel = chart.labels[tooltipItem.index];
-          return "Tank Fill: " + tooltipItem.yLabel + " L";
+          return datasetLabel + ": " + tooltipItem.yLabel + " lbs";
         }
       }
     },

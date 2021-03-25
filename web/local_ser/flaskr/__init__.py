@@ -55,13 +55,45 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
-    @app.route('/dashboard')
-    def dash():
+    @app.route('/')
+    def index():
         return render_template('index.html')
 
+    @app.route('/forgot')
+    def forgot():
+        return render_template('forgot-password.html')
 
+    @app.route('/login')
+    def login():
+        return render_template('login.html')
 
+    @app.route('/register')
+    def register():
+        return render_template('register.html')
 
+    @app.route('/collections')
+    def collections():
+        return render_template('collections.html')
+
+    @app.route('/growthzone')
+    def growthzone():
+        return render_template('growthzone.html')
+
+    @app.route('/nutrientzone')
+    def nutrientzone():
+        return render_template('nutrientzone.html')
+
+    @app.route('/returnline')
+    def returnline():
+        return render_template('returnline.html')
+
+    @app.route('/supplyline')
+    def supplyline():
+        return render_template('supplyline.html')
+
+    @app.route('/livestream')
+    def livestream():
+        return render_template('livestream.html')
 
     @app.route('/farms')
     def farm():

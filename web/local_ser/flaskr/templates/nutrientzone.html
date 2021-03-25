@@ -43,7 +43,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -83,7 +83,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="nutrientzone">
                     <i class="fas fa-fw fa-filter"></i>
                     <span>Nutrient Zone</span></a>
@@ -121,7 +121,6 @@
 
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -216,181 +215,218 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Farm Overview</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Nutrient Zone Overview</h1>
                     </div>
 
-                    <!-- Content Row -->
+                    <!-- Content Row - Pumps & Tanks-->
                     <div class="row">
 
-                        <!-- Freshwater Tank Card -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-danger shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                                Freshwater Tank Status</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">EMPTY</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-exclamation-circle fa-2x text-danger"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Content Column - Pumps-->
+                        <div class="col-lg-6 mb-4">
 
-                        <!-- pH Level Card -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Water pH level
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">7.08</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-success" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="7.08" aria-valuemin="0"
-                                                            aria-valuemax="14"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-tint fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Main Tank Water Level Card -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Main Tank Water Level
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">42L</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-warning" role="progressbar"
-                                                            style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-signal fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Live Stream Card -->
-                        
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Stream Status</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><a class="text-danger" href="livestream">• LIVE</a></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-play fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                               <!-- Card Header -->
-                               <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Plant Growth Overview</h6>
-                            </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header -->
+                            <!-- Nutrient Pump Card -->
+                            <div class="card shadow">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Weight Distribution</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Pump Status Overview</h6>
                                 </div>
-                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Bin 1
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Bin 2
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Bin 3
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-warning"></i> Bin 4
-                                        </span>
+                                    <div class="row no-gutters align-items-center text-center">
+                                        <div class="col-lg-4" style="padding-bottom:20px;">
+                                            <br>
+                                            <h5 class="text-gray-900">pH Pump</h5>
+                                            <br><br>
+                                            <div class="h5 mb-0 font-weight-bold text-success">ON</div>
+                                            <br><br>
+                                            <i class="fas fa-check-circle fa-2x text-success"></i>
+                                        </div>
+                                        <div class="col-lg-4" style="padding-bottom:20px;border-left: 1px solid rgb(95, 93, 93);;
+                                        border-right: 1px solid rgb(95, 93, 93);">
+                                            <br>
+                                            <h5 class="text-gray-900">Mix A Pump</h5>
+                                            <br><br>
+                                            <div class="h5 mb-0 font-weight-bold text-danger">OFF</div>
+                                            <br><br>
+                                            <i class="fas fa-times-circle fa-2x text-danger"></i>
+                                        </div>
+                                        <div class="col-lg-4"style="padding-bottom:20px;">
+                                            <br>
+                                            <h5 class="text-gray-900">Mix B Pump</h5>
+                                            <br><br>
+                                            <div class="h5 mb-0 font-weight-bold text-danger">OFF</div>
+                                            <br><br>
+                                            <i class="fas fa-times-circle fa-2x text-danger"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            
+
                         </div>
+
+                        <!-- Content Column - Pumps-->
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Tank Fill Levels</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="small font-weight-bold">pH Tank Volume<span
+                                            class="float-right">2L</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 5%"
+                                            aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <br>
+                                    <h4 class="small font-weight-bold">Nutrient Mix A Volume<span
+                                            class="float-right">18L</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%"
+                                            aria-valuenow="18" aria-valuemin="0" aria-valuemax="20"></div>
+                                    </div>
+                                    <br>
+                                    <h4 class="small font-weight-bold">Nutrient Mix B Volume<span
+                                        class="float-right">8L</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                                            aria-valuenow="2.4" aria-valuemin="1" aria-valuemax="3"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
                     </div>
 
-                    <!-- Content Row -->
+                    <!-- Content Row - Pic-->
                     <div class="row">
 
+                        <!-- Content Column - Pic-->
                         <div class="col-lg-12 mb-4">
 
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">System Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Supply Line Data Overview</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img src="https://i.gyazo.com/7d9de33fcb388e233fbb4b817070595b.png">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 50%;"
+                                            src="https://i.gyazo.com/43f80b46567cb3511d501efad749a024.png" alt="">
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
+
+                    <!-- Content Row - Table-->
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="d-sm-flex card-header align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Raw Data Readings</h6>
+                                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                        class="fas fa-download fa-sm text-white-50"></i> Download </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Position</th>
+                                                    <th>Office</th>
+                                                    <th>Age</th>
+                                                    <th>Start date</th>
+                                                    <th>Salary</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                    <td>2011/04/25</td>
+                                                    <td>$320,800</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Garrett Winters</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>63</td>
+                                                    <td>2011/07/25</td>
+                                                    <td>$170,750</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ashton Cox</td>
+                                                    <td>Junior Technical Author</td>
+                                                    <td>San Francisco</td>
+                                                    <td>66</td>
+                                                    <td>2009/01/12</td>
+                                                    <td>$86,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cedric Kelly</td>
+                                                    <td>Senior Javascript Developer</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>22</td>
+                                                    <td>2012/03/29</td>
+                                                    <td>$433,060</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Airi Satou</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>33</td>
+                                                    <td>2008/11/28</td>
+                                                    <td>$162,700</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brielle Williamson</td>
+                                                    <td>Integration Specialist</td>
+                                                    <td>New York</td>
+                                                    <td>61</td>
+                                                    <td>2012/12/02</td>
+                                                    <td>$372,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Herrod Chandler</td>
+                                                    <td>Sales Assistant</td>
+                                                    <td>San Francisco</td>
+                                                    <td>59</td>
+                                                    <td>2012/08/06</td>
+                                                    <td>$137,500</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rhona Davidson</td>
+                                                    <td>Integration Specialist</td>
+                                                    <td>Tokyo</td>
+                                                    <td>55</td>
+                                                    <td>2010/10/14</td>
+                                                    <td>$327,900</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Colleen Hurst</td>
+                                                    <td>Javascript Developer</td>
+                                                    <td>San Francisco</td>
+                                                    <td>39</td>
+                                                    <td>2009/09/15</td>
+                                                    <td>$205,500</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -446,12 +482,6 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ url_for('static',filename='js/sb-admin-2.min.js') }}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{{ url_for('static',filename='vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ url_for('static',filename='js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ url_for('static',filename='js/demo/chart-pie-demo.js') }}"></script>
 
 </body>
 
