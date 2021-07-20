@@ -35,3 +35,8 @@ export FLASK_ENV=development
 flask run
 ```
 
+# Tentitive Database Architecture
+
+![image](https://user-images.githubusercontent.com/25777235/126387405-7a7a20df-9938-4adc-b031-cc4c1a89842d.png)
+
+
