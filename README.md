@@ -6,11 +6,16 @@ website v2.
 
 # Team Members
 
+
+* Put your name below!
+
+
 - Michael Wrana
 - Chris Molloy
 - Ryan Power
 - Carter Conboy
 - Quantum Hu
+- Sebastian Huber-Oikle
 
 # Running Website
 
@@ -32,3 +37,4 @@ export FLASK_APP=flaskr
 export FLASK_ENV=development
 
 flask run
+
