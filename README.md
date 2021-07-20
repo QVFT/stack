@@ -6,10 +6,6 @@ website v2.
 
 # Team Members
 
-
-* Put your name below!
-
-
 - Michael Wrana
 - Chris Molloy
 - Ryan Power
