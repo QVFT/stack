@@ -1,6 +1,6 @@
 CREATE TABLE farm
 (
-    farm_id int NOTNULL,
+    farm_id int NOT NULL,
     description varchar(191),
     PRIMARY KEY (farm_id)
 );
@@ -81,7 +81,7 @@ CREATE TABLE growth_zone(
     plant_weight FLOAT(2) NOT NULL,
     light_intensity_1 BOOLEAN,
     light_intensity_2 BOOLEAN,
-    PRIMARY KEY (growwth_id),
+    PRIMARY KEY (growth_id),
     FOREIGN KEY (arduino_id) REFERENCES arduino(arduino_id) ON DELETE cascade,
     FOREIGN KEY (collection_id) REFERENCES collection(collection_id) ON DELETE cascade,
     FOREIGN KEY (sensor_id) REFERENCES weight_sensor(sensor_id) ON DELETE cascade 

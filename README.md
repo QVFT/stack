@@ -7,4 +7,8 @@ website v2.
 # Future Members
 
 * Put your name below!
+
 - Carter Conboy
+- Quantum Hu
+
+
