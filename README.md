@@ -38,9 +38,4 @@ export FLASK_ENV=development
 
 flask run
 ```
-# Database Architecture
 
-![image](https://user-images.githubusercontent.com/25777235/126383441-00c8cba3-1316-4090-bd3f-5f68efe888dc.png)
-
-- DB architecture is subject to change.
-- Currently, growth zones have been merged.
