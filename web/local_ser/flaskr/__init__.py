@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template # pip install this
+from flask import Flask, render_template, request # pip install this
 import pandas as pd # pip install this
 import psycopg2 # brew install this
 import urllib.parse as up # pip install this
@@ -109,4 +109,25 @@ def create_app(test_config=None):
         cur.close()
         db_close(con)
         return render_template('simple.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
+
+
+    @app.route('/input_farm')
+    def input_farm():
+        return render_template('input_farm.html')
+
+    @app.route('/input_farm',methods=['POST'])
+    def readingadd():
+        farm_id = request.form.get('farm_id')
+        farm_description = request.form.get('farm_description')
+        con = db_connect()
+            #cursor
+        cur = con.cursor()
+        #execute query
+        cur.execute("INSERT INTO farm (farm_id, description) VALUES (%s, %s)" %(farm_id, farm_description))
+        #cur.execute('INSERT INTO farm ('+ farm_id+", "+farm_description+")")
+        con.commit()
+        cur.close()
+        db_close(con)
+        return farm_id + " " + farm_description 
+    
     return app
