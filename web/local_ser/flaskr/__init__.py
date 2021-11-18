@@ -119,4 +119,24 @@ def create_app(test_config=None):
             return '', 200
         else:
             return '', 400
+
+    @app.route('/input_farm')
+    def input_farm():
+        return render_template('input_farm.html')
+
+    @app.route('/input_farm',methods=['POST'])
+    def readingadd():
+        farm_id = request.form.get('farm_id')
+        farm_description = request.form.get('farm_description')
+        con = db_connect()
+            #cursor
+        cur = con.cursor()
+        #execute query
+        cur.execute("INSERT INTO farm (farm_id, description) VALUES (%s, %s)" %(farm_id, farm_description))
+        #cur.execute('INSERT INTO farm ('+ farm_id+", "+farm_description+")")
+        con.commit()
+        cur.close()
+        db_close(con)
+        return farm_id + " " + farm_description 
+    
     return app
