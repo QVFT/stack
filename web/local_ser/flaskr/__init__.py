@@ -1,11 +1,11 @@
 import os
-from flask import Flask, render_template # pip install this
+from flask import Flask, render_template, request # pip install this
 import pandas as pd # pip install this
 import psycopg2 # brew install this
-import urllib.parse as up # pip install this
+import git
+import urllib.parse as up
 
-
-
+from werkzeug.wrappers import Request # pip install this
 
 
 
@@ -109,4 +109,14 @@ def create_app(test_config=None):
         cur.close()
         db_close(con)
         return render_template('simple.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
+
+    @app.route('/webhook', methods=['POST'])    
+    def webhook():
+        if request.method == 'POST':
+            print("hook received")
+            repo = git.Git('../../')
+            repo.pull('origin', 'main')
+            return '', 200
+        else:
+            return '', 400
     return app
