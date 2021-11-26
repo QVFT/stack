@@ -1,31 +1,17 @@
 import os
-from flask import Flask, render_template # pip install this
+import mysql.connector
+from flask import Flask, redirect, render_template, request, url_for # pip install this
+from flask_sqlalchemy import SQLAlchemy
 import pandas as pd # pip install this
 import psycopg2 # brew install this
 import urllib.parse as up # pip install this
 
-
-
-
-
-
-"""This section is dedicated to connecting and closing connections to our database"""
-up.uses_netloc.append("postgres")
-url = up.urlparse("postgres://nqmbojat:ShTOpoUpu2MP5my1fBjW-VoFpos0qaxp@queenie.db.elephantsql.com:5432/nqmbojat")
-def db_connect():
-    con = psycopg2.connect(database=url.path[1:],
-    user=url.username,
-    password=url.password,
-    host=url.hostname,
-    port=url.port
-    )
-    return con
-
-def db_close(con):
-    con.close();
-
-
-
+connection = mysql.connector.connect(
+                    host='directorQVFT.mysql.pythonanywhere-services.com',
+                    db='directorQVFT$farmledger',
+                    user='directorQVFT',
+                    password='qvft_db!!!'
+                    )
 
 
 def create_app(test_config=None):
@@ -95,18 +81,25 @@ def create_app(test_config=None):
     def livestream():
         return render_template('livestream.html')
 
-    @app.route('/farms')
-    def farm():
-        con = db_connect()
-            #cursor
-        cur = con.cursor()
-        #execute query
-        cur.execute('SELECT * FROM farm')
-        #array of tuples
-        rows = cur.fetchall()
-        df = pd.DataFrame(rows, columns =['id', 'description'])
-        #close cursor
-        cur.close()
-        db_close(con)
-        return render_template('simple.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
+    @app.route('/input_farm')
+    def input_farm():
+        return render_template('input_farm.html')
+
+    @app.route("/input_farm", methods=["POST"])
+    def add_signup_to_db():
+        farm_id = request.form.get('farm_id')
+        farm_description = str(request.form.get('farm_description'))
+        """Pass data as SQL parameters with mysql."""
+        cursor = connection.cursor()
+        sql = """INSERT INTO farm (farm_id, farm_description) VALUES (%s, %s) """
+        record_tuple = (farm_id, farm_description)
+        cursor.execute(sql,record_tuple)
+        connection.commit()
+
+        if (connection.is_connected()):
+            cursor.close()
+            connection.close()
+        return render_template('index.html')
+
+
     return app
