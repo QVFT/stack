@@ -1,4 +1,5 @@
 import os
+
 import mysql.connector
 from flask import Flask, redirect, render_template, request, url_for # pip install this
 from flask_sqlalchemy import SQLAlchemy
@@ -12,6 +13,7 @@ connection = mysql.connector.connect(
                     user='directorQVFT',
                     password='qvft_db!!!'
                     )
+
 
 
 def create_app(test_config=None):
@@ -81,6 +83,7 @@ def create_app(test_config=None):
     def livestream():
         return render_template('livestream.html')
 
+
     @app.route('/input_farm')
     def input_farm():
         return render_template('input_farm.html')
@@ -100,6 +103,7 @@ def create_app(test_config=None):
             cursor.close()
             connection.close()
         return render_template('index.html')
+
 
 
     return app

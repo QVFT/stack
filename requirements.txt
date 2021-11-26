@@ -1,4 +1,8 @@
 flask
 pandas
 psycopg2
+
 Flask-SQLAlchemy
+
+GitPython
+
