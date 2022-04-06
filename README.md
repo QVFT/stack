@@ -13,6 +13,10 @@ website v2.
 - Quantum Hu
 - Sebastian Huber-Oikle
 
+# Future Members
+
+- Guo Xiaoyao
+
 # Running Website
 
 * Clone the repo
