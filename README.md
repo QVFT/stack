@@ -12,6 +12,7 @@ website v2.
 - Carter Conboy
 - Quantum Hu
 - Sebastian Huber-Oikle
+- Ayaz Vural
 
 # Running Website
 
